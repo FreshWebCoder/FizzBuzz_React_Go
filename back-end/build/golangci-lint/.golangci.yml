@@ -1,0 +1,96 @@
+linters-settings:
+  gocognit:
+    min-complexity: 45
+  govet:
+    check-shadowing: true
+
+  golint:
+    min-confidence: 0
+
+  maligned:
+    suggest-new: true
+
+  dupl:
+    threshold: 100
+
+  nestif:
+    min-complexity: 10
+
+  gocyclo:
+    min-complexity: 15
+
+  cyclop:
+    max-complexity: 15
+
+  goconst:
+    min-len: 3
+    min-occurrences: 2
+
+  depguard:
+    list-type: blacklist
+    include-go-root: false
+
+  misspell:
+    locale: US
+
+  lll:
+    # max line length, lines longer will be reported. Default is 120.
+    # '\t' is counted as 1 character by default, and can be changed with the tab-width option
+    line-length: 110
+    # tab width in spaces. Default to 1.
+    tab-width: 8
+  errcheck:
+    # report about not checking of errors in type assertions: `a := b.(MyStruct)`;
+    # default is false: such cases aren't reported by default.
+    check-type-assertions: false
+
+  nakedret:
+    max-func-lines: 0
+
+  gocritic:
+    disabled-checks:
+      - wrapperFunc
+      - ifElseChain
+    enabled-tags:
+      - performance
+      - style
+      - experimental
+  varnamelen:
+    # The longest distance, in source lines, that is being considered a "small scope." (defaults to 5)
+    # Variables used in at most this many lines will be ignored.
+    max-distance: 5
+linters:
+  enable-all: true
+  disable:
+    - maligned
+    - prealloc
+    - gochecknoglobals
+    - wsl
+    - testpackage
+    - gomnd
+    - wrapcheck
+    - nlreturn
+    - exhaustivestruct
+    - gci
+    - errorlint
+    - scopelint
+    - golint
+    - interfacer
+    - forcetypeassert
+    - govet
+    - execinquery
+    - nonamedreturns
+    - exhaustruct
+    - deadcode
+    - ifshort
+    - structcheck
+    - varcheck
+    - nosnakecase
+    - rowserrcheck
+    - sqlclosecheck
+    - wastedassign
+issues:
+  exclude-rules:
+    - linters:
+        - lll
+      source: "^//go:generate"

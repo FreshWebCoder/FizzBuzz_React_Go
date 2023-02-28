@@ -1,0 +1,20 @@
+.App {
+  height: 300px;
+}
+
+.ant-btn.btn-increase {
+  font-size: 18px;
+  height: auto;
+  padding: 15px 30px;
+  border-radius: 5px;
+}
+
+.ant-typography.text-count {
+  display: block;
+  text-align: center;
+  font-size: 18px;
+}
+.ant-typography.text-message {
+  font-size: 48px;
+  margin: 0;
+}
